@@ -14,8 +14,8 @@ Bash script to uninstall, install, disable or enable Samsung bloatwares.
 * Attach your phone to the computer
 * Allow USB debugging for this computer in your phone
 * Clone this repo and run `./samsung-debloat.sh`
-* Choose your action: uninstall, install, disable or enable
-* Choose the package for the selected action
+    * Choose your action: uninstall, install, disable or enable
+    * Choose the package for the selected action
 
 ## Supported packages
 
@@ -74,10 +74,6 @@ samsung_email=(
 	"com.wsomacp"
 	)
 
-samsung_carmode=(
-	"com.samsung.android.drivelink.stub"
-	)
-
 samsung_edge=(
 	"com.cnn.mobile.android.phone.edgepanel"
 	"com.samsung.android.service.peoplestripe"
@@ -126,6 +122,12 @@ samsung_random=(
 	"com.samsung.android.oneconnect" #Smart Things
 	"com.samsung.android.voc" #Samsung Members
 	"com.samsung.ecomm.global" #Samsung Shop
+    "com.samsung.android.drivelink.stub" #Car mode
+    "com.sec.android.app.popupcalculator" #Samsung Calculator
+	"com.sec.android.app.voicenote" #Voice Recorder
+	"com.sec.android.easyMover.Agent" #Samsung Smart Switch
+	"com.sec.android.easyonehand" #One hand mode
+    "com.sec.android.widgetapp.samsungapps" #Homescreen widget
 	)
 
 samsung_calendar=(
@@ -156,12 +158,7 @@ general=(
 	"com.google.android.onetimeinitializer"
 	"com.google.android.partnersetup"
 	"com.mobeam.barcodeService"
-	"com.sec.android.app.popupcalculator" #Samsung Calculator
-	"com.sec.android.app.voicenote" #Voice Recorder
-	"com.sec.android.easyMover.Agent" #Samsung Smart Switch
-	"com.sec.android.easyonehand" #One hand mode
 	"com.sec.android.splitsound"
-	"com.sec.android.widgetapp.samsungapps" #Homescreen widget
 	)
 
 ant_plus=(
@@ -195,8 +192,6 @@ us_bloatwares=(
 	"com.wavemarket.waplauncher"
 	"com.pandora.android"
 	"com.sec.penup"
-	"com.samsung.android.service.livedrawing"
-	"com.linkedin.android"
 	"co.hunge.app"
 	"com.greatbigstory.greatbigstory"
 	"com.android.documentsui"
@@ -209,7 +204,6 @@ us_bloatwares=(
 	"com.att.android.attsmartwifi"
 	"net.aetherpal.device"
 	"com.asurion.android.protech.att"
-	"com.samsung.android.messaging"
 	"com.wb.goog.got.conquest"
 	"com.wb.goog.dcuniverse"
 	"com.innogames.foeandroid"
