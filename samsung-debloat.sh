@@ -49,6 +49,7 @@ samsung_dex=(
 	"com.samsung.desktopsystemui"
 	"com.sec.android.app.desktoplauncher"
 	"com.sec.android.app.dexonpc"
+    "com.sec.android.desktopcommunity"
 )
 
 samsung_email=(
@@ -108,10 +109,13 @@ samsung_random=(
     "com.sec.android.app.popupcalculator" #Samsung Calculator
 	"com.sec.android.app.voicenote" #Voice Recorder
 	"com.sec.android.easyMover.Agent" #Samsung Smart Switch
+    "com.sec.android.easyMover"
+    "com.samsung.android.smartswitchassistant"
 	"com.sec.android.easyonehand" #One hand mode
     "com.sec.android.widgetapp.samsungapps" #Homescreen widget
     "com.samsung.android.app.reminder"
     "com.samsung.android.themestore"
+    "com.samsung.android.themecenter"
     "com.sec.android.app.samsungapps"
     "com.samsung.android.smartfitting"
     "com.samsung.android.keyguardwallpaperupdator"
@@ -122,7 +126,18 @@ samsung_random=(
     "com.samsung.android.mdecservice"
     "com.samsung.android.allshare.service.fileshare"
     "com.samsung.android.allshare.service.mediashare"
-    "com.samsung.android.mdx" # link windows
+    "com.samsung.android.mdx" #link windows
+    "com.microsoft.appmanager" #your phone companion
+    "com.samsung.sree # samsung" #global goals
+    "com.samsung.android.app.tips"
+    "com.sec.android.app.sbrowser" #browser
+    "com.sec.android.app.shealth" #samsung health
+    "com.samsung.android.app.notes" #samsung notes
+    "com.samsung.android.app.watchmanagerstub" #Wearable Manager Installer
+    "com.samsung.android.app.cocktailbarservice"
+    "com.samsung.android.app.simplesharing" #Samsung Share apps
+    "com.samsung.android.aware.service" #Samsung Share apps
+    "com.samsung.android.app.sharelive" #Samsung Share apps
 	)
 
 samsung_calendar=(
@@ -148,9 +163,6 @@ general=(
 	"com.android.vpndialogs"
 	"com.android.wallpaper.livepicker"
 	"com.android.wallpapercropper"
-	"com.google.android.feedback"
-	"com.google.android.onetimeinitializer"
-	"com.google.android.partnersetup"
 	"com.mobeam.barcodeService"
 	"com.sec.android.splitsound"
 	)
@@ -179,6 +191,16 @@ facebook=(
 	"com.facebook.appmanager"
 	"com.facebook.services"
 	)
+
+google_apps=(
+    "com.google.android.apps.tachyon"
+    "com.google.android.projection.gearhead"
+    "com.google.android.videos"
+    "com.google.android.music"
+    "com.google.android.feedback"
+	"com.google.android.onetimeinitializer"
+	"com.google.android.partnersetup"
+)
 
 us_bloatwares=(
 	"jp.gocro.smartnews.android"
@@ -308,6 +330,7 @@ function choose_package() {
 		"print_services"
 		"microsoft"
 		"facebook"
+        "google_apps"
 		"us_bloatwares"
 		)
 
@@ -396,6 +419,10 @@ function choose_package() {
 				;;
 			"facebook")
 				run_adb "${facebook[@]}"
+				continue
+				;;
+            "google_apps")
+				run_adb "${google_apps[@]}"
 				continue
 				;;
 			"us_bloatwares")
