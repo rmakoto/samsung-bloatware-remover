@@ -110,6 +110,19 @@ samsung_random=(
 	"com.sec.android.easyMover.Agent" #Samsung Smart Switch
 	"com.sec.android.easyonehand" #One hand mode
     "com.sec.android.widgetapp.samsungapps" #Homescreen widget
+    "com.samsung.android.app.reminder"
+    "com.samsung.android.themestore"
+    "com.sec.android.app.samsungapps"
+    "com.samsung.android.smartfitting"
+    "com.samsung.android.keyguardwallpaperupdator"
+    "com.samsung.android.app.watchmanagerstub"
+    "com.samsung.android.smartmirroring"
+    "com.diotek.sec.lookup.dictionary"
+    "com.samsung.android.aircommandmanager"
+    "com.samsung.android.mdecservice"
+    "com.samsung.android.allshare.service.fileshare"
+    "com.samsung.android.allshare.service.mediashare"
+    "com.samsung.android.mdx" # link windows
 	)
 
 samsung_calendar=(
@@ -136,7 +149,6 @@ general=(
 	"com.android.wallpaper.livepicker"
 	"com.android.wallpapercropper"
 	"com.google.android.feedback"
-	"com.google.android.googlequicksearchbox"
 	"com.google.android.onetimeinitializer"
 	"com.google.android.partnersetup"
 	"com.mobeam.barcodeService"
