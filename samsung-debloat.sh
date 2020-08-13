@@ -202,6 +202,12 @@ google_apps=(
 	"com.google.android.partnersetup"
 )
 
+swiftkey=(
+    "com.touchtype.swiftkey"
+    "com.touchtype.swiftkey.res.overlay"
+    "com.swiftkey.swiftkeyconfigurator"
+)
+
 us_bloatwares=(
 	"jp.gocro.smartnews.android"
 	"com.synchronoss.dcs.att.r2g"
@@ -331,6 +337,7 @@ function choose_package() {
 		"microsoft"
 		"facebook"
         "google_apps"
+        "swiftkey"
 		"us_bloatwares"
 		)
 
@@ -423,6 +430,10 @@ function choose_package() {
 				;;
             "google_apps")
 				run_adb "${google_apps[@]}"
+				continue
+				;;
+            "swiftkey")
+				run_adb "${swiftkey[@]}"
 				continue
 				;;
 			"us_bloatwares")
