@@ -83,20 +83,13 @@ samsung_wellbeing=(
 
 samsung_random=(
     "flipboard.boxer.app" #Flipboard app
-    "com.samsung.android.da.daagent" #Dual Messenger
     "com.samsung.android.service.livedrawing" #Live Message
     "com.samsung.android.app.dressroom" #Samsung Wallpapers
-    "com.samsung.android.scloud"
-    "com.samsung.android.sdk.handwriting"
-    "com.samsung.android.sdk.professionalaudio.utility.jammonitor"
-    "com.samsung.android.universalswitch"
     "com.samsung.android.widgetapp.yahooedge.finance"
     "com.samsung.android.widgetapp.yahooedge.sport"
-    "com.samsung.storyservice"
-    "com.samsung.android.service.aircommand" #Air command
+    "com.samsung.android.service.aircommand" #Air command pen
+    "com.samsung.android.aircommandmanager"
     "com.samsung.android.ardrawing" #AR Doodle
-    "com.samsung.android.svoiceime"
-    "com.samsung.android.beaconmanager"
     "com.samsung.android.app.ledbackcover"
     "com.sec.android.cover.ledcover"
     "com.samsung.android.app.social" #What's New
@@ -105,36 +98,24 @@ samsung_random=(
     "com.samsung.android.oneconnect" #Smart Things
     "com.samsung.android.voc" #Samsung Members
     "com.samsung.ecomm.global" #Samsung Shop
-    "com.samsung.android.drivelink.stub" #Car mode
+    "com.samsung.android.drivelink.stub" #Samsung Car mode
     "com.sec.android.app.popupcalculator" #Samsung Calculator
     "com.sec.android.app.voicenote" #Voice Recorder
     "com.sec.android.easyMover.Agent" #Samsung Smart Switch
-    "com.sec.android.easyMover"
-    "com.samsung.android.smartswitchassistant"
-    "com.sec.android.easyonehand" #One hand mode
-    "com.sec.android.widgetapp.samsungapps" #Homescreen widget
-    "com.samsung.android.app.reminder"
-    "com.samsung.android.themestore"
+    "com.samsung.android.themestore" #samsung themes
     "com.samsung.android.themecenter"
-    "com.sec.android.app.samsungapps"
-    "com.samsung.android.smartfitting"
     "com.samsung.android.keyguardwallpaperupdator"
-    "com.samsung.android.app.watchmanagerstub"
-    "com.samsung.android.smartmirroring"
     "com.diotek.sec.lookup.dictionary"
-    "com.samsung.android.aircommandmanager"
-    "com.samsung.android.mdecservice"
-    "com.samsung.android.allshare.service.fileshare"
-    "com.samsung.android.allshare.service.mediashare"
+    "com.samsung.android.mdecservice" #Samsung Experience Service
     "com.samsung.android.mdx" #link windows
     "com.microsoft.appmanager" #your phone companion
-    "com.samsung.sree # samsung" #global goals
-    "com.samsung.android.app.tips"
+    "com.samsung.sree" #samsung global goals
+    "com.samsung.android.app.tips" #samsung tips
     "com.sec.android.app.sbrowser" #browser
     "com.sec.android.app.shealth" #samsung health
     "com.samsung.android.app.notes" #samsung notes
     "com.samsung.android.app.watchmanagerstub" #Wearable Manager Installer
-    "com.samsung.android.app.cocktailbarservice"
+    "com.samsung.android.app.cocktailbarservice" #flip case
     "com.samsung.android.app.simplesharing" #Samsung Share apps
     "com.samsung.android.aware.service" #Samsung Share apps
     "com.samsung.android.app.sharelive" #Samsung Share apps
@@ -154,17 +135,6 @@ samsung_weather=(
 
 samsung_oneui=(
     "com.sec.android.app.launcher" #OneUI Launcher
-    )
-
-general=(
-    "com.android.providers.downloads.ui"
-    "com.android.providers.partnerbookmarks"
-    "com.android.sharedstoragebackup"
-    "com.android.vpndialogs"
-    "com.android.wallpaper.livepicker"
-    "com.android.wallpapercropper"
-    "com.mobeam.barcodeService"
-    "com.sec.android.splitsound"
     )
 
 ant_plus=(
@@ -193,8 +163,8 @@ facebook=(
     )
 
 google_apps=(
-    "com.google.android.apps.tachyon"
-    "com.google.android.projection.gearhead"
+    "com.google.android.apps.tachyon" #duo
+    "com.google.android.projection.gearhead" #google auto
     "com.google.android.videos"
     "com.google.android.music"
     "com.google.android.feedback"
@@ -207,34 +177,6 @@ swiftkey=(
     "com.touchtype.swiftkey.res.overlay"
     "com.swiftkey.swiftkeyconfigurator"
 )
-
-us_bloatwares=(
-    "jp.gocro.smartnews.android"
-    "com.synchronoss.dcs.att.r2g"
-    "com.wavemarket.waplauncher"
-    "com.pandora.android"
-    "com.sec.penup"
-    "co.hunge.app"
-    "com.greatbigstory.greatbigstory"
-    "com.android.documentsui"
-    "com.drivemode"
-    "com.att.dh"
-    "com.att.dtv.shaderemote"
-    "com.att.tv"
-    "com.cnn.mobile.android.phone"
-    "com.bleacherreport.android.teamstream"
-    "com.att.android.attsmartwifi"
-    "net.aetherpal.device"
-    "com.asurion.android.protech.att"
-    "com.wb.goog.got.conquest"
-    "com.wb.goog.dcuniverse"
-    "com.innogames.foeandroid"
-    "com.playstudios.popslots"
-    "com.gsn.android.tripeaks"
-    "com.att.myWireless"
-    "com.foxnextgames.m3"
-    "com.samsung.attvvm"
-    )
 
 function get_device_status() {
     device_id=$(adb devices | awk 'FNR == 2 {print $1}')
@@ -269,7 +211,7 @@ function set_action() {
                 break
                 ;;
             "disable") 
-                action="disable"
+                action="disable-user"
                 break
                 ;;
             "install")
@@ -296,7 +238,7 @@ function set_action() {
 function run_adb() {
     arr=("$@")
 
-    if [[ "$action" == "disable" || "$action" == "uninstall" || "$action" == "enable" ]]
+    if [[ "$action" == "disable-user" || "$action" == "uninstall" || "$action" == "enable" ]]
     then
         for package in "${arr[@]}";
             do
@@ -325,20 +267,18 @@ function choose_package() {
         "samsung_edge"
         "samsung_kids"
         "samsung_gearvr"
-        "samsung_random"
         "samsung_calendar"
         "samsung_keyboard"
         "samsung_weather"
         "samsung_oneui"
         "samsung_wellbeing"
-        "general"
+        "samsung_random"
         "ant_plus"
         "print_services"
         "microsoft"
         "facebook"
         "google_apps"
         "swiftkey"
-        "us_bloatwares"
         )
 
     select opt in "${apps[@]}" "change action" "quit";
@@ -408,10 +348,6 @@ function choose_package() {
                 run_adb "${samsung_oneui[@]}"
                 continue
                 ;;
-            "general")
-                run_adb "${general[@]}"
-                continue
-                ;;
             "ant_plus")
                 run_adb "${ant_plus[@]}"
                 continue
@@ -434,10 +370,6 @@ function choose_package() {
                 ;;
             "swiftkey")
                 run_adb "${swiftkey[@]}"
-                continue
-                ;;
-            "us_bloatwares")
-                run_adb "${us_bloatwares[@]}"
                 continue
                 ;;
             "change action")
